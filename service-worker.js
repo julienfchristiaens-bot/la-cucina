@@ -1,4 +1,10 @@
-const CACHE_NAME = 'amy-nicole-v3';
+const CACHE_NAME = 'amy-nicole-v4';
+
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
 const urlsToCache = [
   '/',
   '/index.html',
